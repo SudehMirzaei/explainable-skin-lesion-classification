@@ -55,53 +55,6 @@ Sources include:
 
 ---
 
-## Age
-
-Most patients are older than 50 years.
-
-Risk increases with cumulative UV exposure throughout life.
-
----
-
-## Skin Type
-
-Higher risk in:
-
-- Fair skin
-- Light-colored eyes
-- Blonde or red hair
-- Individuals who burn easily
-
----
-
-## Genetics
-
-Certain inherited disorders dramatically increase BCC risk.
-
-Examples include:
-
-- Gorlin Syndrome
-- Xeroderma Pigmentosum
-
----
-
-## Immune Status
-
-Immunosuppressed patients have increased susceptibility.
-
-Examples:
-
-- Organ transplant recipients
-- Long-term immunosuppressive therapy
-
----
-
-## Previous Skin Cancer
-
-Patients with previous BCC have an increased likelihood of developing another lesion.
-
----
-
 # Clinical Presentation
 
 Clinically, BCC often appears as a slowly enlarging lesion.
