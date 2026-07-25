@@ -148,17 +148,11 @@ Large branching blood vessels resembling tree branches.
 
 These are among the most specific dermoscopic findings of BCC.
 
-CNN Importance:
-Very High ⭐⭐⭐⭐⭐
-
 ---
 
 ## Blue-Gray Ovoid Nests
 
 Large blue-gray pigmented structures representing tumor nests within the dermis.
-
-CNN Importance:
-Very High ⭐⭐⭐⭐⭐
 
 ---
 
@@ -168,9 +162,6 @@ Brown or gray pigmented areas shaped like leaves.
 
 Highly suggestive of pigmented BCC.
 
-CNN Importance:
-High ⭐⭐⭐⭐
-
 ---
 
 ## Spoke-Wheel Areas
@@ -178,9 +169,6 @@ High ⭐⭐⭐⭐
 Radial pigmented projections around a darker center.
 
 Frequently observed in superficial BCC.
-
-CNN Importance:
-High ⭐⭐⭐⭐
 
 ---
 
@@ -190,17 +178,11 @@ Loss of epidermis with crust formation.
 
 Indicates tumor progression.
 
-CNN Importance:
-High ⭐⭐⭐⭐
-
 ---
 
 ## Multiple Blue-Gray Globules
 
 Numerous round blue-gray structures distributed throughout the lesion.
-
-CNN Importance:
-High ⭐⭐⭐⭐
 
 ---
 
@@ -209,80 +191,6 @@ High ⭐⭐⭐⭐
 Visible under polarized dermoscopy.
 
 Associated with dermal fibrosis.
-
-CNN Importance:
-Moderate ⭐⭐⭐
-
----
-
-## Pigment Network
-
-Usually absent.
-
-Unlike melanoma or nevus, a typical pigment network is generally not observed.
-
-CNN Importance:
-Useful negative feature.
-
----
-
-## Milia-like Cysts
-
-Typically absent.
-
-Presence favors Seborrheic Keratosis rather than BCC.
-
----
-
-## Comedo-like Openings
-
-Usually absent.
-
-Their presence suggests benign keratosis.
-
----
-
-# Histopathology
-
-Microscopically, BCC exhibits characteristic architectural patterns.
-
-## Epidermis
-
-Tumor originates from basal epidermal cells.
-
----
-
-## Dermis
-
-Tumor islands infiltrate the dermis.
-
----
-
-## Basaloid Cells
-
-Small hyperchromatic cells with scant cytoplasm.
-
----
-
-## Peripheral Palisading
-
-Cells align along the tumor border.
-
-This is a classic pathological hallmark.
-
----
-
-## Retraction Clefts
-
-Artificial spaces between tumor islands and surrounding stroma.
-
-Very characteristic of BCC.
-
----
-
-## Mitotic Activity
-
-Usually present but less aggressive than melanoma.
 
 ---
 
