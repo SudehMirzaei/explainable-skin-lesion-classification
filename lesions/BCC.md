@@ -134,7 +134,7 @@ Possible symptoms include:
 
 ---
 
-# Dermoscopic Features
+# Dermoscopic Features(CNN Perspective)
 
 Dermoscopy dramatically improves BCC diagnosis.
 
@@ -221,85 +221,6 @@ BCC may resemble several other skin lesions.
 | Seborrheic Keratosis (BKL) | Milia-like cysts, comedo-like openings |
 | Nevus (NV) | Symmetric pigmentation and regular borders |
 | Squamous Cell Carcinoma | Hyperkeratosis and marked ulceration |
-
----
-
-# CNN Perspective
-
-## What Visual Features Should a CNN Learn?
-
-A deep convolutional neural network should learn multiple complementary visual features.
-
-### Arborizing Vessels
-
-Branching vascular structures are among the strongest indicators.
-
-Importance:
-⭐⭐⭐⭐⭐
-
----
-
-### Blue-Gray Ovoid Nests
-
-Represent deep tumor pigmentation.
-
-Importance:
-⭐⭐⭐⭐⭐
-
----
-
-### Leaf-like Structures
-
-Important discriminative feature.
-
-Importance:
-⭐⭐⭐⭐
-
----
-
-### Ulceration
-
-Useful for distinguishing advanced lesions.
-
-Importance:
-⭐⭐⭐⭐
-
----
-
-### Border Morphology
-
-Rolled borders should be captured through edge-sensitive filters.
-
-Importance:
-⭐⭐⭐⭐
-
----
-
-### Texture
-
-BCC often has smooth, shiny texture unlike keratotic lesions.
-
-Importance:
-⭐⭐⭐
-
----
-
-### Color Distribution
-
-CNN should recognize:
-
-- Pink
-- White
-- Blue-gray
-- Brown
-
-instead of relying on a single dominant color.
-
----
-
-### Background Contrast
-
-The lesion should be distinguished from surrounding healthy skin.
 
 ---
 
