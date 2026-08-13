@@ -1,251 +1,229 @@
 # Explainable Skin Lesion Classification
 
-An end-to-end deep learning project for **multi-class skin lesion classification** using **ResNet50**, **Transfer Learning**, and **Explainable Artificial Intelligence (XAI)** techniques on the **HAM10000** dermoscopic image dataset.
+An explainable deep learning project for skin lesion classification using the HAM10000 dataset and a pretrained ResNet50 model.
+The main goal of this project is not only to classify skin lesions, but also to investigate why the model makes its predictions using explainability techniques such as Grad-CAM and Grad-CAM++.
 
-The primary goal of this project is not only to achieve high classification performance but also to improve the **interpretability**, **transparency**, and **trustworthiness** of AI models used for medical image analysis.
+## 📌 Project Overview
 
----
+Skin lesion classification is an important application of deep learning in medical imaging. However, high classification accuracy alone is not sufficient for a trustworthy medical AI system.
+A model may correctly classify an image while relying on irrelevant regions or visual artifacts. Therefore, this project combines:
 
-# Project Objectives
+- Deep learning-based image classification
+- ResNet50 feature extraction
+- Class-weighted training
+- Model evaluation
+- Confusion matrix analysis
+- Grad-CAM visualization
+- Grad-CAM++ visualization
+- Class-specific analysis
+- Trustworthy AI principles
 
-- Multi-class skin lesion classification
-- Transfer Learning with ResNet50
-- Handling class imbalance using Weighted CrossEntropy Loss
-- Learning Rate Scheduling
-- Early Stopping
-- Model evaluation using multiple metrics
-- Explainability using Grad-CAM
-- Building a Trustworthy AI pipeline for medical image analysis
+The overall workflow is:
+```
 
----
+HAM10000 Dataset
+│
+▼
+Image Preprocessing
+│
+▼
+ResNet50
+│
+▼
+Skin Lesion Classification
+│
+├──────────────► Quantitative Evaluation
+│                  ├── Accuracy
+│                  ├── Loss
+│                  └── Confusion Matrix
+│
+└──────────────► Explainability
+├── Grad-CAM
+└── Grad-CAM++
 
-# Dataset
+```
 
-This project uses the **HAM10000 (Human Against Machine with 10,000 Training Images)** dataset.
+## 🧠 Dataset
 
-The dataset contains dermoscopic images belonging to seven diagnostic categories.
+This project uses the **HAM10000** (Human Against Machine with 10000 training images) dataset.
+HAM10000 contains dermatoscopic images representing seven different diagnostic categories of pigmented skin lesions.
 
-For detailed information, see:
+The seven classes used in this project are:
 
-📄 **Dataset Documentation**
-
-➡️ [docs/HAM10000.md](docs/HAM10000.md)
-
----
-
-# Skin Lesion Classes
-
-The dataset consists of seven diagnostic categories.
-
-| Class | Description |
-|--------|-------------|
-| AKIEC | Actinic Keratoses and Intraepithelial Carcinoma |
+| Code | Lesion |
+|------|--------|
+| AKIEC | Actinic Keratoses / Intraepithelial Carcinoma |
 | BCC | Basal Cell Carcinoma |
 | BKL | Benign Keratosis-like Lesions |
 | DF | Dermatofibroma |
 | MEL | Melanoma |
-| NV | Melanocytic Nevus |
+| NV | Melanocytic Nevi |
 | VASC | Vascular Lesions |
 
-Detailed medical and AI-oriented documentation is available for every lesion.
+For more information about the dataset:
+👉 [HAM10000 Dataset Documentation](docs/HAM10000.md)
 
-| Lesion | Documentation |
-|----------|--------------|
-| AKIEC | [medical/AKIEC.md](medical/AKIEC.md) |
-| BCC | [medical/BCC.md](medical/BCC.md) |
-| BKL | [medical/BKL.md](medical/BKL.md) |
-| DF | [medical/DF.md](medical/DF.md) |
-| MEL | [medical/MEL.md](medical/MEL.md) |
-| NV | [medical/NV.md](medical/NV.md) |
-| VASC | [medical/VASC.md](medical/VASC.md) |
+## 🔬 Skin Lesion Classes
 
-Each documentation includes:
+Each lesion category has its own documentation describing the characteristics of the class and its relevance to the classification problem.
 
-- Medical definition
-- Risk factors
-- Clinical presentation
-- Dermoscopic features
-- CNN perspective
-- Histopathology
-- Disease progression
-- Differential diagnosis
-- Explainability (Grad-CAM)
-- AI challenges
-- Summary
+- [AKIEC](lesions/AKIEC.md) — Actinic Keratoses / Intraepithelial Carcinoma
+- [BCC](lesions/BCC.md) — Basal Cell Carcinoma
+- [BKL](lesions/BKL.md) — Benign Keratosis-like Lesions
+- [DF](lesions/DF.md) — Dermatofibroma
+- [MEL](lesions/MEL.md) — Melanoma
+- [NV](lesions/NV.md) — Melanocytic Nevi
+- [VASC](lesions/VASC.md) — Vascular Lesions
 
----
+These documents provide the medical and visual context needed to better understand the classification task.
 
-# Deep Learning Model
+## 🏗️ Model Architecture
 
-The classification model is based on **ResNet50** pretrained on ImageNet.
+The classification model is based on **ResNet50**, a deep convolutional neural network introduced for image recognition.
+A pretrained ResNet50 backbone is used as the feature extractor, followed by a custom classification head adapted for the seven HAM10000 classes.
 
-Main components include:
+The ResNet50 architecture and the modifications used in this project are documented here:
+👉 [ResNet50 Documentation](docs/ResNet50.md)
 
-- Transfer Learning
-- Frozen Backbone
-- Custom Classification Head
-- Weighted CrossEntropy Loss
-- Adam Optimizer
-- ReduceLROnPlateau Scheduler
-- Early Stopping
+## 📊 Model Evaluation
 
-More details:
+Model performance is evaluated using several complementary approaches.
 
-➡️ [docs/ResNet50.md](docs/ResNet50.md)
+### Accuracy
 
----
+Accuracy provides an overall measure of how many test samples are classified correctly.
+👉 [Accuracy Analysis](Evaluation/Accuracy/README.md)
 
-# Explainable AI
+### Loss
 
-Understanding **why** a CNN makes a prediction is essential for clinical applications.
+Training and validation loss are analyzed to understand the optimization process and possible signs of underfitting or overfitting.
+👉 [Loss Analysis](Evaluation/Loss/README.md)
 
-This repository uses **Grad-CAM** to visualize the image regions responsible for model predictions.
+### Confusion Matrix
 
-Documentation:
+The confusion matrix provides a class-level view of the model's predictions and makes it possible to identify which lesion categories are frequently confused with each other.
+👉 [Confusion Matrix Analysis](Evaluation/Confusion%20Matrix/README.md)
 
-- [docs/GradCAM.md](docs/GradCAM.md)
-- [docs/Trustworthy_AI.md](docs/Trustworthy_AI.md)
+## 🔎 Explainability
 
----
+A central component of this project is **Explainable AI (XAI)**.
+In medical imaging, understanding the regions that influence a model's prediction is particularly important. Therefore, this project uses two gradient-based visualization techniques:
 
-# Model Evaluation
+### Grad-CAM
 
-Model performance is evaluated using several complementary metrics.
+Grad-CAM identifies image regions that contribute to the model's prediction by using gradients flowing into the final convolutional layers.
+👉 [Grad-CAM Analysis](Evaluation/GRADCAM/README.md)
 
-## Classification Report
+### Grad-CAM++
 
-- Precision
-- Recall
-- F1-score
-- Support
+Grad-CAM++ extends Grad-CAM and can provide more detailed localization, particularly when multiple relevant regions contribute to a prediction.
+👉 [Grad-CAM++ Analysis](Evaluation/GRADCAM++/README.md)
 
----
+These visualizations help investigate whether the model is focusing on clinically meaningful lesion regions rather than irrelevant image areas.
 
-## Confusion Matrix
+## 🩺 Trustworthy AI
 
-The confusion matrix provides a detailed analysis of class-wise performance and common misclassifications.
+Medical AI systems should not be evaluated solely based on predictive performance.
+A trustworthy system should also consider:
 
-📄 Documentation
+- Explainability
+- Transparency
+- Reliability
+- Robustness
+- Interpretability
+- Potential sources of bias
+- Clinical relevance
 
-➡️ [images/evaluation/confusion_matrix/README.md](images/evaluation/confusion_matrix/README.md)
+The role of these concepts in this project is discussed in:
+👉 [Trustworthy AI Documentation](docs/Trustworthy_AI.md)
 
----
+## 🧩 Understanding Skin Lesion Classification
 
-## Accuracy Curve
+Before analyzing the model, it is useful to understand the underlying medical classification problem, the seven lesion categories, and the visual characteristics that distinguish them.
+👉 [Skin Lesions Documentation](docs/Skin_Lesions.md)
 
-The accuracy curve illustrates how the model learns throughout training and whether it generalizes well.
+## 📈 Evaluation & Explainability Overview
 
-📄 Documentation
+The repository organizes the experimental analysis into two major components:
 
-➡️ [images/evaluation/accuracy_curve/README.md](images/evaluation/accuracy_curve/README.md)
+### Quantitative Evaluation
 
----
-
-## Loss Curve
-
-The loss curve provides insight into optimization, convergence, and overfitting.
-
-📄 Documentation
-
-➡️ [images/evaluation/loss_curve/README.md](images/evaluation/loss_curve/README.md)
-
----
-
-# Project Structure
-
-```text
-explainable-skin-lesion-classification/
-
-├── docs/
-│   ├── HAM10000.md
-│   ├── Skin_Lesion.md
-│   ├── ResNet50.md
-│   ├── GradCAM.md
-│   ├── Trustworthy_AI.md
-│
-├── medical/
-│   ├── AKIEC.md
-│   ├── BCC.md
-│   ├── BKL.md
-│   ├── DF.md
-│   ├── MEL.md
-│   ├── NV.md
-│   └── VASC.md
-│
-├── images/
-│   └── evaluation/
-│       ├── confusion_matrix/
-│       ├── accuracy_curve/
-│       └── loss_curve/
-│
-├── train.py
-├── requirements.txt
-└── README.md
 ```
 
----
+Evaluation/
+│
+├── Accuracy
+├── Loss
+└── Confusion Matrix
 
-# Results
+```
 
-The ResNet50 model achieved an overall classification accuracy of approximately **74%** on the HAM10000 validation dataset.
+These analyses answer: **How well does the model perform?**
 
-Major findings include:
+### Explainability
 
-- Strong performance on **NV**, **BCC**, and **VASC**
-- Moderate performance on **DF**
-- Greater difficulty distinguishing **MEL**, **BKL**, and **AKIEC**
-- Most common misclassification: **Melanoma ↔ Nevus**
-- Stable training without severe overfitting
-- Good convergence using ReduceLROnPlateau and Early Stopping
+```
 
-Detailed evaluation can be found in the corresponding documentation.
+Evaluation/
+│
+├── GRADCAM
+└── GRADCAM++
 
----
+```
 
-# Technologies
+These analyses answer: **Why does the model make its prediction?**
 
-- Python
-- PyTorch
-- Torchvision
-- NumPy
-- Pandas
-- Matplotlib
-- Scikit-learn
-- OpenCV
+Combining these two perspectives provides a more complete evaluation of the model.
 
----
+## 🎯 Project Goals
 
-# Future Work
+The main objectives of this project are:
 
-Possible future improvements include:
+- Build a deep learning model for seven-class skin lesion classification.
+- Use a pretrained ResNet50 architecture for image representation and classification.
+- Evaluate the model using quantitative metrics.
+- Analyze class-specific errors using the confusion matrix.
+- Visualize model attention using Grad-CAM.
+- Compare model explanations using Grad-CAM++.
+- Investigate whether the model focuses on relevant lesion regions.
+- Connect model performance with principles of Trustworthy AI.
 
-- EfficientNet
-- DenseNet121
-- Vision Transformer (ViT)
-- ConvNeXt
-- Swin Transformer
-- Focal Loss
-- Test-Time Augmentation
-- Ensemble Learning
-- SHAP
-- LIME
-- Attention Maps
-- Clinical Metadata Integration
+## 📚 Documentation
 
----
+The repository documentation is organized into three main sections.
 
-# References
+### Dataset & Theory
 
-- HAM10000 Dataset
-- ImageNet
-- ResNet50
-- Grad-CAM
-- PyTorch Documentation
+- [HAM10000](docs/HAM10000.md)
+- [Skin Lesions](docs/Skin_Lesions.md)
+- [ResNet50](docs/ResNet50.md)
+- [Trustworthy AI](docs/Trustworthy_AI.md)
 
----
+### Lesion Classes
 
-# License
+- [AKIEC](lesions/AKIEC.md)
+- [BCC](lesions/BCC.md)
+- [BKL](lesions/BKL.md)
+- [DF](lesions/DF.md)
+- [MEL](lesions/MEL.md)
+- [NV](lesions/NV.md)
+- [VASC](lesions/VASC.md)
 
-This project is intended for educational and research purposes.
+### Evaluation
 
-It should not be used as a standalone clinical decision-making system without professional medical supervision.
+- [Accuracy](Evaluation/Accuracy/README.md)
+- [Loss](Evaluation/Loss/README.md)
+- [Confusion Matrix](Evaluation/Confusion%20Matrix/README.md)
+- [Grad-CAM](Evaluation/GRADCAM/README.md)
+- [Grad-CAM++](Evaluation/GRADCAM++/README.md)
+
+## 🔬 Research Perspective
+
+This project is designed not only as a classification experiment but also as an exploration of explainable and trustworthy medical AI.
+
+The central research question is:
+
+> Can a deep learning model classify skin lesions accurately while also providing meaningful visual evidence for its predictions?
+
+The combination of classification performance, class-level error analysis, and visual explanations provides a foundation for investigating this question.
+
