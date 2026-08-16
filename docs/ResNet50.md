@@ -378,7 +378,7 @@ In this repository, ResNet50 serves as the backbone for multiclass classificatio
 
 The pretrained convolutional layers extract hierarchical visual features, while a custom classification head predicts one of seven diagnostic categories.
 
-The model is optimized using weighted cross-entropy loss, adaptive learning rate scheduling, and early stopping. Performance is evaluated using accuracy, precision, recall, F1-score, confusion matrix, and Grad-CAM visualizations to ensure both predictive performance and interpretability.
+The model is optimized using weighted cross-entropy loss, adaptive learning rate scheduling, and early stopping. Performance is evaluated using accuracy, precision, recall, F1-score, confusion matrix, and Grad-CAM and Grad-CAM++ visualizations to ensure both predictive performance and interpretability.
 
 ---
 
